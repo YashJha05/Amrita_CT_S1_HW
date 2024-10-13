@@ -31,8 +31,8 @@ for i in gradestudent_grades.items():
 
 def sm():
     b = {}
-    ans = input("Do you want to enter student records? enter y/n")
-    while ans == "y":
+    s = input("Do you want to enter student records? enter y/n")
+    while s == "y":
         sid = input("Enter Student Id")
         name = input("Enter name")
         Subject = input("Enter Subject")
@@ -44,8 +44,6 @@ def sm():
         record = {sid:{namet:Subjectl}}
         b.update(record)
         s = input("do you want to enter one more value? enter y/n")
-        if s == "n":
-            break
     print(b)
 
 # 4.) Design a simple Python-based Library Management System that can:
@@ -62,7 +60,7 @@ def sm():
 
 def add_book(id, title, author, quantity):
     library_books = {id : {'title' : title, 'author' : author, 'quantity' : quantity}}
-    return(id, title, author, quantity, library_books)
+    return(id, title, author, quantity, library_books) # Don't understand why, but the question says so
 
 def register_member(name, member_id):
     library_members = {member_id : {'name' : name}}
@@ -108,6 +106,13 @@ while checker != num:
     sum += checker
     checker += 1
 print(sum)
+# Alternate approach
+num = int(input("Enter number for sum"))
+sum = 0
+while num!=0:
+    sum = sum + num
+    num -= 1
+print(f"Sum = {sum}")
 
 # 8.) Reverse a number using for loop and while loop
 
@@ -124,10 +129,15 @@ num = int(input("Enter a number: "))
 reverse = 0
 
 for i in range(num):
-    if num == 0:
-        break
-    else:
-        digit = num % 10
-        reverse = reverse * 10 + digit
-        num //= 10
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num //= 10
 print(reverse)
+
+#Alternate approach with for loop - 
+num = int(input("Enter a number: "))
+reverse = ""
+
+for i in str(num): #Iterates over the string num
+    reverse = i + reverse
+print(reverse) # reverse can be used as int by simply casting as int(reverse)
